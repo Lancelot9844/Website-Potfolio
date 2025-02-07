@@ -161,9 +161,9 @@ form button:hover {
 }
 
 .profile-pic {
-  width: 150px; /* Adjust size if needed */
-  height: 150px;
-  margin-top: 10 px; /* Increase this value to move it further down */
+  width: 100px; /* Adjust size if needed */
+  height: 100px;
+  margin-top: 20 px; /* Increase this value to move it further down */
 }
 
 
