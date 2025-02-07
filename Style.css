@@ -1,61 +1,210 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
   color: #333;
+  background-color: #f4f4f4;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.5em;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.landing-section {
-  height: 100vh;
-  background: #f8f9fa;
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  height: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hero Section */
+#hero {
+  background: linear-gradient(135deg, #0073e6, #00c6ff);
+  color: #fff;
+  padding: 150px 0;
   text-align: center;
-  padding-top: 70px;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+#hero .btn {
+  background: #fff;
+  color: #0073e6;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#hero .btn:hover {
+  background: #0073e6;
+  color: #fff;
+}
+
+.highlight {
+  color: #ffdd57;
+  font-weight: 600;
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Portfolio */
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 40px);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+}
+
+.project i {
+  font-size: 2rem;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background: #0073e6;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #005bb5;
 }
 
 .profile-pic {
   width: 150px; /* Adjust size if needed */
   height: 150px;
-  margin-top: 15 px; /* Increase this value to move it further down */
+  margin-top: 10 px; /* Increase this value to move it further down */
 }
 
-.social-links img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s;
-}
 
-.social-links img:hover {
-  transform: scale(1.1);
-}
-
-.about, .projects {
-  padding: 40px 0;
-}
-
-.project-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  transition: transform 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-.contact-section {
-  background-color: #333;
-  color: #fff;
-}
-
+/* Footer */
 footer {
-  background-color: #222;
-  color: #bbb;
-  padding: 10px 0;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0073e6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+
+  .project {
+    flex: 1 1 100%;
+  }
 }
