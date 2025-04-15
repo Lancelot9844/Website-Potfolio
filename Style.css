@@ -190,6 +190,11 @@ footer {
   color: #0073e6;
 }
 
+.position-top{
+  position: relative;
+  top: 70px
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   #hero h1 {
