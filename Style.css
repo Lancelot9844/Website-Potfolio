@@ -44,7 +44,10 @@ header nav ul li a {
   text-decoration: none;
   font-weight: 600;
 }
-
+.position-top{
+  position: relative;
+  top: 70px
+}
 /* Hero Section */
 #hero {
   background: linear-gradient(135deg, #0073e6, #00c6ff);
@@ -190,10 +193,7 @@ footer {
   color: #0073e6;
 }
 
-.position-top{
-  position: relative;
-  top: 70px
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
