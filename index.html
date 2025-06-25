@@ -6,9 +6,130 @@
     <title>Bivek Kumar Sah - Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Advanced Water Gradient Animated Background */
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #abccd5 0%, #93acd5 40%, #00eaff 100%);
+            background-size: 300% 300%;
+            animation: waterGradient 12s ease-in-out infinite;
+            position: relative;
+            overflow-x: hidden;
+        }
+        @keyframes waterGradient {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        /* Water Ripple SVG Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.18;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><filter id="ripple"><feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" result="turb"/><feDisplacementMap in2="turb" in="SourceGraphic" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter><rect width="100%" height="100%" style="filter:url(%23ripple);fill:rgba(255,255,255,0.15)"/></svg>');
+            animation: rippleMove 18s linear infinite;
+            background-size: cover;
+            background-repeat: no-repeat;
+            mix-blend-mode: lighten;
+        }
+        @keyframes rippleMove {
+            0% {background-position: 0 0;}
+            100% {background-position: 200px 100px;}
+        }
+        /* Keep content above overlay */
+        #home, #about, #projects, #contact, footer, header {
+            position: relative;
+            z-index: 1;
+        }
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s, transform 1s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: none;
+        }
+        /* Profile Animation */
+        .profile-pic {
+            transition: transform 0.5s;
+        }
+        .profile-pic:hover {
+            transform: scale(1.08) rotate(-2deg);
+        }
+        /* Social Icon Animation */
+        .social-links img {
+            width: 36px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 50%;
+        }
+        .social-links img:hover {
+            transform: scale(1.2) rotate(8deg);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+        }
+        /* Project Card Animation */
+        .project-card {
+            background: rgba(255,255,255,0.95);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+        .dot-fresher {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-top: 10px;
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+            letter-spacing: 0.15em;
+            font-weight: bold;
+        }
+
+        .dot-text {
+            background: linear-gradient(90deg, #d7e878, #6483b633, #32393b, #7c93a7);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 3s linear infinite alternate;
+        }
+
+        @keyframes gradientText {
+            0% {background-position: 0% 50%;}
+            100% {background-position: 100% 50%;}
+        }
+
+        .dot-anim {
+            margin-left: 0.5em;
+            display: inline-block;
+        }
+
+        .dot-anim span {
+            opacity: 0.2;
+            color: #00eaff;
+            font-size: 1.5em;
+            animation: dotBlink 1.2s infinite;
+            font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+        }
+
+        .dot-anim span:nth-child(1) { animation-delay: 0s; }
+        .dot-anim span:nth-child(2) { animation-delay: 0.3s; }
+        .dot-anim span:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes dotBlink {
+            0%, 80%, 100% { opacity: 0.2; }
+            40% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-
     <!-- Navigation Bar -->
     <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -28,9 +149,11 @@
     </header>
 
     <!-- Landing Section -->
-    <section id="home" class="landing-section d-flex justify-content-center align-items-center text-center position-top">
+    <section id="home" class="landing-section d-flex justify-content-center align-items-center text-center position-top fade-in">
         <div>
-            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic rounded-circle">
+            <div class="profile-story-wrapper d-flex align-items-center justify-content-center mb-3">
+                <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic rounded-circle" id="mainProfilePic">
+            </div>
             <h1 class="mt-3">Bivek Kumar Sah</h1>
             <p>Data Analyst & Developer</p>
             <div class="social-links mt-4">
@@ -40,17 +163,25 @@
                 <a href="https://github.com/Lancelot9844" target="_blank" class="mx-2"><img src="images/github.png" alt="GitHub"></a>
                 <a href="https://x.com/BIVEK042" target="_blank" class="mx-2"><img src="images/twitter.png" alt="Twitter"></a>
             </div>
+            <div class="dot-fresher mt-3">
+                <span class="dot-text">Fresher</span>
+                <span class="dot-anim">
+                    <span aria-hidden="true">.</span>
+                    <span aria-hidden="true">.</span>
+                    <span aria-hidden="true">.</span>
+                </span>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="container text-center my-5 position-top">
+    <section id="about" class="container text-center my-5 position-top fade-in">
         <h2>About Me</h2>
         <p class="mt-3">I am a passionate Data Analyst and Developer with experience in data-driven decision making...</p>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container my-5 position-top">
+    <section id="projects" class="container my-5 position-top fade-in">
         <h2 class="text-center">Projects</h2>
         <div class="row mt-4">
             <div class="col-md-6 mb-4">
@@ -69,7 +200,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section bg-dark text-white text-center py-5 position-top">
+    <section id="contact" class="contact-section bg-dark text-white text-center py-5 position-top fade-in">
         <div class="container">
             <h2>Contact Me</h2>
             <form action="https://formsubmit.co/bibekgupta9844@gmail.com" method="post" class="mt-4">
@@ -82,26 +213,17 @@
                 <div class="form-group">
                     <textarea class="form-control" name="message" placeholder="Your Message" rows="4" required></textarea>
                 </div>
-
-                <!-- Redirect to Thank You Page -->
                 <input type="hidden" name="_next" value="https://bivekumarsah.com.np/thank-you.html">
-
-                <!-- Disable CAPTCHA -->
                 <input type="hidden" name="_captcha" value="false">
-
-                <!-- Custom Subject Line -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission from bivekumarsah.com.np">
-
-                <!-- Send Confirmation Email to the User -->
                 <input type="hidden" name="_autoresponse" value="Thank you for reaching out! I will get back to you soon.">
-
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-3 bg-dark text-white position-top">
+    <footer class="text-center py-3 bg-dark text-white position-top fade-in">
         <p>&copy; 2024 Bivek Kumar Sah</p>
     </footer>
 
@@ -109,5 +231,31 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Fade-in on scroll
+        function revealOnScroll() {
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+        // Smooth scroll for navbar links
+        document.querySelectorAll('.navbar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.hash) {
+                    e.preventDefault();
+                    document.querySelector(this.hash).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

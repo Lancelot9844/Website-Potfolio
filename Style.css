@@ -163,12 +163,34 @@ form button:hover {
   background: #005bb5;
 }
 
-.profile-pic {
-  width: 100px; /* Adjust size if needed */
-  height: 100px;
-  margin-top: 20 px; /* Increase this value to move it further down */
+/* Modern Card and Social Styles */
+.project-card {
+    background: rgba(255,255,255,0.95);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
+.project-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+}
+.social-links img {
+    width: 36px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 50%;
+}
+.social-links img:hover {
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border: 6px solid #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    transition: transform 0.5s;
+}
+.profile-pic:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
 
 /* Footer */
 footer {
@@ -192,8 +214,6 @@ footer {
 .social-links a:hover {
   color: #0073e6;
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
