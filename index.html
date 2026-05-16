@@ -18,12 +18,6 @@
             overflow-x: hidden;
         }
 
-        @keyframes waterGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body::before {
             content: "";
             position: fixed;
@@ -40,6 +34,142 @@
             background-repeat: no-repeat;
             mix-blend-mode: lighten;
         }
+
+
+
+
+        /* Professional Projects Section */
+#projects {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.projects-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+}
+
+.projects-heading h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #263238;
+}
+
+.projects-heading p {
+    font-size: 1.1rem;
+    color: #425466;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    padding: 32px;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 15px 40px rgba(31, 45, 61, 0.18);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 22px 55px rgba(31, 45, 61, 0.25);
+}
+
+.project-label {
+    display: inline-block;
+    background: #e8f2ff;
+    color: #0066cc;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1f2933;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.project-card p {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.tech-stack {
+    margin: 22px 0;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #334155;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 4px;
+}
+
+.project-features {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 18px;
+}
+
+.project-features li {
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 0.96rem;
+}
+
+.project-features li::before {
+    content: "✓";
+    color: #007bff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 18px;
+    background: #007bff;
+    color: #ffffff !important;
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: 0.3s ease;
+}
+
+.project-link:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.project-status {
+    display: inline-block;
+    margin-left: 10px;
+    color: #16a34a;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
 
         @keyframes rippleMove {
             0% { background-position: 0 0; }
@@ -96,6 +226,38 @@
             font-weight: bold;
             text-decoration: none;
         }
+
+
+        .about-card {
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(31, 45, 61, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.about-card p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: #334155;
+    margin-bottom: 18px;
+}
+
+.about-skills {
+    margin-top: 20px;
+}
+
+.about-skills span {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 8px 14px;
+    margin: 5px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 
         .project-card a:hover {
             text-decoration: underline;
@@ -204,7 +366,9 @@
             </div>
 
             <h1 class="mt-3">Bivek Kumar Sah</h1>
-            <p>Coming Soon..</p>
+            <p class="hero-subtitle">
+                AI-Powered Full-Stack Developer | Building Web, Database & IoT Projects with Modern AI Tools
+            </p>
 
             <div class="social-links mt-4">
                 <a href="https://www.facebook.com/bibek.gupta.77312" target="_blank" rel="noopener noreferrer" class="mx-2">
@@ -240,88 +404,142 @@
     </section>
 
     <!-- About Section -->
+
     <section id="about" class="container text-center my-5 position-top fade-in">
-        <h2>About Me</h2>
-        <p class="mt-3">Updating Soon...</p>
-    </section>
+    <h2>About Me</h2>
+
+    <div class="about-card mx-auto mt-4">
+        <p>
+            I am a BSc Computing student and aspiring full-stack developer with experience in
+            building web applications, database-driven systems, IoT-based projects, and payment
+            integrated platforms.
+        </p>
+
+        <p>
+            I am also skilled at using modern AI tools to learn faster, solve coding problems,
+            debug errors, design project ideas, and improve development workflow. I enjoy combining
+            AI assistance with practical programming to build useful real-world projects.
+        </p>
+
+        <div class="about-skills">
+            <span>Web Development</span>
+            <span>Database Design</span>
+            <span>AI Tools</span>
+            <span>IoT Projects</span>
+            <span>Payment Integration</span>
+            <span>VPS Deployment</span>
+        </div>
+    </div>
+</section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container my-5 position-top fade-in">
-        <h2 class="text-center">Projects</h2>
+<section id="projects" class="container my-5 position-top fade-in">
+    <div class="projects-heading text-center">
+        <h2>Featured Projects</h2>
+        <p>
+            Here are some of my academic and practical projects where I worked on web development,
+            database management, role-based systems, payment integration, IoT, and deployment.
+        </p>
+    </div>
 
-        <div class="row mt-4">
-            <!-- Project 1 -->
-            <div class="col-md-6 mb-4">
-                <div class="project-card p-3 rounded shadow">
-                    <h3>Role-Based E-Commerce Website</h3>
+    <div class="row">
+        <!-- Project 1 -->
+        <div class="col-lg-6 mb-4">
+            <div class="project-card">
+                <span class="project-label">College Project</span>
 
-                    <p>
-                        I developed a role-based e-commerce website for my college project using PHP, SQL, and Oracle APEX/Oracle Database.
-                        The system includes Admin, Trader/Seller, and Customer roles.
-                    </p>
+                <h3>Role-Based E-Commerce Website</h3>
 
-                    <p>
-                        Customers can browse products, add items to the cart, place orders, and make test payments using PayPal Sandbox.
-                        Traders can manage products, while Admins can manage users, traders, products, and orders.
-                    </p>
+                <p>
+                    A role-based e-commerce platform developed using PHP, SQL, and Oracle APEX/Oracle Database.
+                    The system supports different dashboards and permissions for Admin, Trader/Seller, and Customer.
+                </p>
 
-                    <p>
-                        This project helped me improve my skills in web development, database management, role-based access control, and payment integration.
-                    </p>
+                <div class="tech-stack">
+                    <span>PHP</span>
+                    <span>SQL</span>
+                    <span>Oracle APEX</span>
+                    <span>PayPal Sandbox</span>
+                    <span>Role-Based Access</span>
                 </div>
-            </div>
 
-            <!-- Project 2 -->
-            <div class="col-md-6 mb-4">
-                <div class="project-card p-3 rounded shadow">
-                    <h3>Digital Cashless Payment for Public Transportation</h3>
-
-                    <p>
-                        I developed AauJam, a digital cashless payment system for public transportation.
-                        The project uses RFID cards, a digital wallet, mobile app, web admin panel, backend APIs, and MySQL database.
-                    </p>
-
-                    <p>
-                        Users can register, recharge their wallet, link RFID cards, and pay bus fares by tapping the card.
-                        Admins, staff, agents, and transport operators can manage users, cards, transactions, complaints, and route-related data.
-                    </p>
-
-                    <p>
-                        The project was hosted on a VPS and deployed with the domain
-                        <a href="https://aaujam.com" target="_blank" rel="noopener noreferrer">aaujam.com</a>.
-                        This project helped me improve my skills in full-stack development, IoT integration, database design, payment integration, and server deployment.
-                    </p>
-                </div>
+                <ul class="project-features">
+                    <li>Customers can browse products, add to cart, and place orders.</li>
+                    <li>PayPal Sandbox was integrated for test payment processing.</li>
+                    <li>Traders can add, update, and manage their products.</li>
+                    <li>Admins can manage users, traders, products, and orders.</li>
+                </ul>
             </div>
         </div>
-    </section>
+
+        <!-- Project 2 -->
+        <div class="col-lg-6 mb-4">
+            <div class="project-card">
+                <span class="project-label">Full-Stack + IoT Project (college project)</span>
+                <span class="project-status">Live</span>
+
+                <h3>Digital Cashless Payment for Public Transportation</h3>
+
+                <p>
+                    AauJam is a digital cashless payment system for public transportation. It uses RFID cards,
+                    digital wallet, mobile app, web admin panel, backend APIs, and MySQL database to make bus fare
+                    payment faster and more transparent.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Java Spring Boot</span>
+                    <span>MySQL</span>
+                    <span>Android App</span>
+                    <span>RFID</span>
+                    <span>ESP32</span>
+                    <span>VPS Hosting</span>
+                </div>
+
+                <ul class="project-features">
+                    <li>Users can register, recharge wallet, and link RFID cards.</li>
+                    <li>Passengers can pay bus fares by tapping the RFID card.</li>
+                    <li>Admins, staff, agents, and operators can manage system data.</li>
+                    <li>The project was hosted on a VPS with the domain aaujam.com.</li>
+                </ul>
+
+                <a href="https://aaujam.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                    Visit Live Project
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section bg-dark text-white text-center py-5 position-top fade-in">
-        <div class="container">
-            <h2>Contact Me</h2>
+<section id="contact" class="contact-section bg-dark text-white text-center py-5 position-top fade-in">
+    <div class="container">
+        <h2>Contact Me</h2>
 
-            <form id="contactForm" class="mt-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-                </div>
+        <form action="https://api.web3forms.com/submit" method="POST" class="mt-4">
+            <input type="hidden" name="access_key" value="296f8ea9-2a63-4bb3-931f-acfb892a5b22">
 
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+            </div>
 
-                <div class="form-group">
-                    <textarea class="form-control" name="message" placeholder="Your Message" rows="4" required></textarea>
-                </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
 
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="New Contact Form Submission from bivekumarsah.com.np">
-                <input type="hidden" name="_autoresponse" value="Thank you for reaching out! I will get back to you soon.">
+            <div class="form-group">
+                <textarea class="form-control" name="message" placeholder="Your Message" rows="4" required></textarea>
+            </div>
 
-                <button type="submit" class="btn btn-primary" id="sendBtn">Send Message</button>
-            </form>
-        </div>
-    </section>
+            <input type="hidden" name="subject" value="New Contact Form Submission from bivekumarsah.com.np">
+            <input type="hidden" name="from_name" value="Bivek Kumar Sah Portfolio">
+            <input type="hidden" name="redirect" value="https://bivekumarsah.com.np/thank-you.html">
+
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="text-center py-3 bg-dark text-white position-top fade-in">
@@ -334,7 +552,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Fade-in on scroll
         function revealOnScroll() {
             document.querySelectorAll('.fade-in').forEach(function(el) {
                 const rect = el.getBoundingClientRect();
@@ -348,7 +565,6 @@
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('DOMContentLoaded', revealOnScroll);
 
-        // Smooth scroll for navbar links
         document.querySelectorAll('.navbar-nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 if (this.hash) {
@@ -359,41 +575,6 @@
                     });
                 }
             });
-        });
-
-        // Contact form submit without redirecting to FormSubmit page
-        const contactForm = document.getElementById("contactForm");
-        const sendBtn = document.getElementById("sendBtn");
-
-        contactForm.addEventListener("submit", async function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(contactForm);
-
-            sendBtn.disabled = true;
-            sendBtn.innerText = "Sending...";
-
-            try {
-                const response = await fetch("https://formsubmit.co/ajax/bibekgupta9844@gmail.com", {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        "Accept": "application/json"
-                    }
-                });
-
-                if (response.ok) {
-                    alert("Form submitted successfully!");
-                    contactForm.reset();
-                } else {
-                    alert("Message not sent. Please try again later.");
-                }
-            } catch (error) {
-                alert("Form service is currently unavailable. Please try again later.");
-            }
-
-            sendBtn.disabled = false;
-            sendBtn.innerText = "Send Message";
         });
     </script>
 </body>
