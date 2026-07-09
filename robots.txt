@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lancelot9844.github.io/Website-Potfolio/sitemap.xml
